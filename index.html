@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Solver</title>
+    <script>
+        function Calc() {
+        var a = document.getElementById('a').value;
+        var b = document.getElementById('b').value;
+        const c = document.getElementById('c').value;
+        var disc = b*b - 4 * a * c;
+        console.log (disc);
+        if (disc >=0) {
+            console.log ('greater or equal to zero');
+            var x1 = (-b+Math.sqrt(disc))/2*a;
+            var x2 = (-b-Math.sqrt(disc))/2*a;
+            console.log("x1 is = " + x1 + " " + " and x2 is =" + " " + x2);
+            document.getElementById('ans').value = "x is = " + x1 + " " + " and x is =" + " " + x2;
+        } else {
+            console.log ('less than 0');
+            var r = -b/(2*a);
+            var i = Math.sqrt(-disc)/(2*a);
+            console.log ("r is" +  " " + r + " " + " and i is" + " " + i);
+            console.log ("ans is = " +  " " + r,"+",i,"i");
+            console.log ("ans is = " +  " " + r,"-",i,"i");
+            document.getElementById('ans').value = r+"+"+i+"i" + "\n" + "or" + " " + r+"+"+i+"i";
+        }
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <p>Welcome To Web Math Solver >> Quadratic Equation</p> <hr>
+        <div class="container">
+            <p>This is a tool used to solve quadratic equations. Quadratic equations are equations with the highest degree of 2.
+                very simple to use. Add values and get results. No advert, No gabage, No nonsese! <br>
+                <code>Developed with love by Dr. Agha, The Maths Lion.</code>
+            </p>
+        </div>
+        <form>
+            <input type="text" placeholder="coefficient of x squared" id="a" style="border-color: chartreuse;">
+            <input type="text" placeholder="coefficient of x" id="b">
+            <input type="text" placeholder="constant term" id="c"><br> <br>
+            <input type="button" value="Calculate" onclick="Calc()" > <br><br>
+            <label>Answer is : </label> <br> 
+
+            <br> <br>
+            <textarea id="ans" disabled></textarea> <br><br>
+        </form>
+    </center>
+</body>
+</html>
